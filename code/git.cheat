@@ -1,10 +1,16 @@
 % git
 
-# Set global git user name
+# Set global git user name (write to ~/.gitconfig)
 git config --global user.name <name>
 
-# Set global git user email
+# Set global git user email (write to ~/.gitconfig)
 git config --global user.email <email>
+
+# Set local repo git user name (write to .git/config)
+git config user.name <name>
+
+# Set local repo git user email (write to .git/config)
+git config user.email <email>
 
 # Initializes a git repository
 git init
@@ -122,11 +128,17 @@ git commit --no-verify
 # Create new branch from current HEAD
 git checkout -b <new_branch_name>
 
+# Create new local branch and track the remote branch
+git checkout -b <new_branch_name> <origin_branch_name>
+
 # Remove commits from local repository (destroy changes)
 git reset --hard HEAD~<number_of_commits>
 
 # Remove commits from local repository (keep changes)
 git reset --soft HEAD~<number_of_commits>
+
+# show remote branches
+git branch -r
 
 # show all branches(local & remote)
 git branch -a
